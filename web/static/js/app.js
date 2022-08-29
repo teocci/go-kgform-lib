@@ -7,5 +7,5 @@ import MainModule from './main-module.js'
 window.onload = () => {
     console.log('init')
 
-    viewerModule = MainModule.instance
+    mainModule = MainModule.instance
 }
