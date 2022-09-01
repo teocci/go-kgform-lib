@@ -1,48 +1,11 @@
 import KGForm from "./lib/kg-form.js"
-import KGInputText from "./lib/kg-input-text.js"
+import Dummy from "./lib/dummy.js"
 
 /**
  * Created by RTT.
  * Author: teocci@yandex.com on 2022-8월-29
  */
 export default class MainModule {
-    static demo = [
-        {
-            id : 'test',
-            title : 'title',
-            type : 'text',
-            name : 'test-name',
-            required : true
-        },
-        {
-            id : 'test2',
-            title : 'title2',
-            type : 'text',
-            name : 'test-name',
-            required : true
-        },
-        {
-            id : 'test3',
-            title : 'title3',
-            type : 'text',
-            name : 'test-name',
-            required : true
-        },
-        {
-            id : 'test4',
-            title : 'title4',
-            type : 'text',
-            name : 'test-name',
-            required : true
-        },
-        {
-            id : 'test5',
-            title : 'title5',
-            type : 'text',
-            name : 'test-name',
-            required : true,
-        },
-    ]
     
 
     static get instance() {
@@ -59,25 +22,20 @@ export default class MainModule {
     initElement() {
         this.placeholder = document.getElementById('main')
         this.form = new KGForm(this.placeholder)
-        
-        const domForm = this.form.dom
-        const options = {
-            id : 'test',
-            title : 'title',
-            type : 'text',
-            name : 'test-name',
-            required : true
-        }
 
-        MainModule.demo.forEach( option =>{
+        Dummy.inputTextOptions.forEach(option => {
             this.form.createField(option)
         })
+        
+        this.form.createField(Dummy.checkboxOption)
+        this.form.createField(Dummy.dateOptions)
+        this.form.createField(Dummy.textareaOptions)
 
-        console.log({dom: this.form.dom})
+        console.log({ dom: this.form.dom })
     }
 
     initListeners() {
         const placeholder = this.placeholder
-        console.log({placeholder})
+        console.log({ placeholder })
     }
 }

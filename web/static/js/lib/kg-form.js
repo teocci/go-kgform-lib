@@ -1,5 +1,8 @@
 import BaseComponent from '../base/base-component.js'
+import KGInputCheckBox from './kg-input-checkbox.js'
+import KGInputDate from './kg-input-date.js'
 import KGInputText from './kg-input-text.js'
+import KGTextArea from './kg-textarea.js'
 
 export default class KGForm extends BaseComponent {
 
@@ -47,6 +50,17 @@ export default class KGForm extends BaseComponent {
                 field = new KGInputText(this.form, options)
                 break;
 
+            case KGInputCheckBox.TAG:
+                field = new KGInputCheckBox(this.form, options)
+                break;
+
+            case KGInputDate.TAG:
+                field = new KGInputDate(this.form, options)
+                break;
+
+            case KGTextArea.TAG:
+                field = new KGTextArea(this.form, options)
+                break;
 
             default:
                 throw new Error('no type supported');
