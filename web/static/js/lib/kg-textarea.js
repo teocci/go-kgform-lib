@@ -1,14 +1,14 @@
 import BaseComponent from '../base/base-component.js'
 
 export default class KGTextArea extends BaseComponent {
-
     static TAG = 'textarea'
     static DEFAULT_OPTIONS = {
-        type: 'textarea',
-        title: 'kg-textarea',
-        id: '',
-        rows: '5',
-        cols: '40',
+        type: KGTextArea.TAG,
+        id: `kg-${KGTextArea.TAG}`,
+        label: KGTextArea.TAG,
+        name: null,
+        rows: null,
+        cols: null,
     }
 
     constructor(element, options) {
@@ -21,20 +21,20 @@ export default class KGTextArea extends BaseComponent {
     initElement() {
         const options = this.options
 
-        let label = document.createElement('label')
+        const label = document.createElement('label')
         label.htmlFor = options.id
-        label.textContent = options.title
+        label.textContent = options.label
 
-        let textarea = document.createElement('textarea')
+        const textarea = document.createElement('textarea')
         textarea.id = options.id
         textarea.name = options.id
-        textarea.cols = parseInt(options.cols)
-        textarea.rows = parseInt(options.rows)
+        textarea.cols = options.cols
+        textarea.rows = options.rows
 
-        let div = document.createElement('div')
-        div.append(label, textarea)
+        const field = document.createElement('div')
+        field.append(label, textarea)
 
-        this.dom = div
-        this.holder.appendChild(div)
+        this.dom = field
+        this.holder.appendChild(field)
     }
 }

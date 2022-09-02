@@ -2,40 +2,39 @@ export default class Dummy {
     static inputTextOptions = [
         {
             id: 'test',
-            title: 'title',
+            label: 'title',
             type: 'text',
             name: 'test-name',
             required: true,
         },
         {
             id: 'test2',
-            title: 'title2',
+            label: 'title2',
             type: 'text',
             name: 'test-name',
             required: true,
         },
         {
             id: 'test3',
-            title: 'title3',
+            label: 'title3',
             type: 'text',
             name: 'test-name',
             required: true,
         },
         {
             id: 'test4',
-            title: 'title4',
+            label: 'title4',
             type: 'text',
             name: 'test-name',
             required: true,
         },
         {
             id: 'test5',
-            title: 'title5',
+            label: 'title5',
             type: 'text',
             name: 'test-name',
-            required: true,
+            required: false,
         },
-
     ]
 
     static checkboxOption = {
@@ -83,8 +82,7 @@ export default class Dummy {
 
     static dateOptions = {
         type: 'date',
-        title: 'Start date:',
-
+        label: 'Start date:',
         id: 'start',
         name: 'trip-start',
         // value: '2018-07-22',
@@ -94,7 +92,7 @@ export default class Dummy {
 
     static textareaOptions = {
         type: 'textarea',
-        title: 'Tell us your story',
+        label: 'Tell us your story',
         id: 'story',
         rows: '5',
         cols: '20',

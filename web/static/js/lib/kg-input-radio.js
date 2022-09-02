@@ -41,20 +41,21 @@ export default class KGInputRadio extends BaseComponent {
 
         fieldset.append(legend)
 
-        options.items.forEach((element) => {
-            let div = document.createElement('div')
-            let radio = document.createElement('input')
+        options.items.forEach((item) => {
+            const field = document.createElement('div')
+            const radio = document.createElement('input')
             radio.type = KGInputRadio.TAG
-            radio.id = element.id
+            radio.id = item.id
+            radio.value = item.value
             radio.name = options.name
-            radio.value = element.value
+            radio.checked = item.checked
 
-            let label = document.createElement('label')
-            label.htmlFor = element.id
-            label.textContent = element.text
+            const label = document.createElement('label')
+            label.htmlFor = item.id
+            label.textContent = item.text
 
-            div.append(radio, label)
-            fieldset.appendChild(div)
+            field.append(radio, label)
+            fieldset.appendChild(field)
         })
 
         this.dom = fieldset

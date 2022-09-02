@@ -4,10 +4,10 @@ export default class KGInputDate extends BaseComponent {
     static TAG = 'date'
 
     static DEFAULT_OPTIONS = {
-        type: 'date',
-        title: 'kg-date',
-        id: '',
-        name: '',
+        type: KGInputDate.TAG,
+        id: `kg-${KGInputDate.TAG}`,
+        label: KGInputDate.TAG,
+        name: null,
         value: currentDate(),
         min: null,
         max: null,
@@ -23,22 +23,22 @@ export default class KGInputDate extends BaseComponent {
     initElement() {
         const options = this.options
 
-        let label = document.createElement('label')
+        const label = document.createElement('label')
         label.htmlFor = options.id
-        label.textContent = options.title
+        label.textContent = options.label
 
-        let inputDate = document.createElement('input')
-        inputDate.type = KGInputDate.TAG
-        inputDate.id = options.id
-        inputDate.name = options.name
-        inputDate.value = options.value
-        options.min ? inputDate.min = options.min : null
-        options.max ? inputDate.max = options.max : null
+        const input = document.createElement('input')
+        input.type = KGInputDate.TAG
+        input.id = options.id
+        input.name = options.name
+        input.value = options.value
+        if (!isNull(options.min)) input.min = options.min
+        if (!isNull(options.max)) input.max = options.max
 
-        let div = document.createElement('div')
-        div.append(label, inputDate)
+        const field = document.createElement('div')
+        field.append(label, input)
 
-        this.dom = div
-        this.holder.append(div)
+        this.dom = field
+        this.holder.append(field)
     }
 }

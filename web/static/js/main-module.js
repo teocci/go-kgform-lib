@@ -25,18 +25,16 @@ export default class MainModule {
 
         this.form = new KGForm(this.placeholder)
 
+        const group = new KGFieldset(this.form.body, Dummy.fieldsetOptions)
         Dummy.inputTextOptions.forEach(option => {
-            this.form.createField(option)
+            const field = this.form.createField(option)
+            group.addField(field)
         })
         
         this.form.createField(Dummy.checkboxOption)
         this.form.createField(Dummy.dateOptions)
         this.form.createField(Dummy.textareaOptions)
         this.form.createField(Dummy.radioOption)
-
-        const field = this.form.createField(Dummy.checkboxOption)
-        const group = new KGFieldset(this.form.body, Dummy.fieldsetOptions)
-        group.addField(field)
     }
 
     initListeners() {

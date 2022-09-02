@@ -31,27 +31,27 @@ export default class KGInputCheckBox extends BaseComponent {
     initElement() {
         const options = this.options
 
-        let fieldset = document.createElement('fieldset')
+        const fieldset = document.createElement('fieldset')
 
-        let legend = document.createElement('legend')
+        const legend = document.createElement('legend')
         legend.textContent = options.legend
 
         fieldset.appendChild(legend)
 
-        options.items.forEach((element) => {
-            let div = document.createElement('div')
-            let checkbox = document.createElement('input')
+        options.items.forEach((item) => {
+            const field = document.createElement('div')
+            const checkbox = document.createElement('input')
             checkbox.type = 'checkbox'
-            checkbox.id = element.id
-            checkbox.name = element.id
-            checkbox.checked = element.checked
+            checkbox.id = item.id
+            checkbox.name = item.id
+            checkbox.checked = item.checked
 
-            let label = document.createElement('label')
-            label.htmlFor = element.id
-            label.textContent = element.text
+            const label = document.createElement('label')
+            label.htmlFor = item.id
+            label.textContent = item.text
 
-            div.append(checkbox, label)
-            fieldset.appendChild(div)
+            field.append(checkbox, label)
+            fieldset.appendChild(field)
         })
 
         this.dom = fieldset

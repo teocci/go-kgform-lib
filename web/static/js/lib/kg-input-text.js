@@ -4,14 +4,14 @@ export default class KGInputText extends BaseComponent {
 
     static TAG = 'text'
     static DEFAULT_OPTIONS = {
-        id: '',
-        title: 'kg-label',
         type: KGInputText.TAG,
-        name: 'kg-name',
+        id: `kg-${KGInputText.TAG}`,
+        label: KGInputText.TAG,
+        name: null,
         required: false,
         minLength: null,
-        maxLength: 15,
-        size: 20,
+        maxLength: null,
+        size: null,
     }
 
     constructor(element, options) {
@@ -24,24 +24,25 @@ export default class KGInputText extends BaseComponent {
 
     initElement() {
         const options = this.options
-        const div = document.createElement('div')
+        const field = document.createElement('div')
 
         const label = document.createElement('label')
         label.htmlFor = options.id
-        label.textContent = options.title
+        label.textContent = options.label
 
         const input = document.createElement('input')
-        input.id = options.id
         input.type = options.type
-        input.name = options.name
+        input.id = options.id
         input.requiered = options.requiered
-        options.minLength ? input.minLength = options.minLength : null
-        options.maxLength ? input.maxLength = options.maxLength : null
-        options.size ? input.size = options.size : null
 
-        div.append(label, input)
+        if (!isNull(options.name)) input.minLength = options.name
+        if (!isNull(options.minLength)) input.minLength = options.minLength
+        if (!isNull(options.maxLength)) input.maxLength = options.maxLength
+        if (!isNull(options.size)) input.size = options.size
 
-        this.dom = div
-        this.holder.appendChild(div)
+        field.append(label, input)
+
+        this.dom = field
+        this.holder.appendChild(field)
     }
 }

@@ -4,6 +4,7 @@
  */
 
 const isBoolean = b => 'boolean' === typeof b
+const isNull = a => a == null
 
 const serialize = o => JSON.stringify(o)
 
