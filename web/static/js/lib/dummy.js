@@ -5,28 +5,28 @@ export default class Dummy {
             title: 'title',
             type: 'text',
             name: 'test-name',
-            required: true
+            required: true,
         },
         {
             id: 'test2',
             title: 'title2',
             type: 'text',
             name: 'test-name',
-            required: true
+            required: true,
         },
         {
             id: 'test3',
             title: 'title3',
             type: 'text',
             name: 'test-name',
-            required: true
+            required: true,
         },
         {
             id: 'test4',
             title: 'title4',
             type: 'text',
             name: 'test-name',
-            required: true
+            required: true,
         },
         {
             id: 'test5',
@@ -37,7 +37,6 @@ export default class Dummy {
         },
 
     ]
-
 
     static checkboxOption = {
         type: 'checkbox',
@@ -53,33 +52,33 @@ export default class Dummy {
                 checked: false,
                 text: 'Horns',
             },
-        ]
+        ],
     }
 
     static radioOption = {
         type: 'radio',
         legend: 'Select a maintenance drone',
-        name : 'drone',
+        name: 'drone',
         items: [
             {
                 id: 'huey',
-                value : 'huey',
+                value: 'huey',
                 checked: true,
-                text : 'Huey'
+                text: 'Huey',
             },
             {
                 id: 'dewey',
-                value : 'dewey',
+                value: 'dewey',
                 checked: false,
-                text : 'Dewey'
+                text: 'Dewey',
             },
             {
                 id: 'louie',
-                value : 'louie',
+                value: 'louie',
                 checked: false,
-                text : 'Louie'
+                text: 'Louie',
             },
-        ]
+        ],
     }
 
     static dateOptions = {
@@ -90,21 +89,20 @@ export default class Dummy {
         name: 'trip-start',
         // value: '2018-07-22',
         // min: '2018-01-01',
-         max: '2022-12-31',
+        max: '2022-12-31',
     }
 
     static textareaOptions = {
-        type : 'textarea',
-        title : 'Tell us your story',
-        id : 'story',
-        rows : '5',
-        cols : '20',
+        type: 'textarea',
+        title: 'Tell us your story',
+        id: 'story',
+        rows: '5',
+        cols: '20',
     }
 
-    
     static fieldsetOptions = {
-        type : 'fieldset',
-        legend : '이것은 필드셋 레전드다',
-        name : 'group'
+        type: 'fieldset',
+        legend: '이것은 필드셋 레전드다',
+        name: 'group',
     }
 }

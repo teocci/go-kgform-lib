@@ -18,9 +18,8 @@ export default class KGInputCheckBox extends BaseComponent {
                 checked: false,
                 text: '',
             },
-        ]
+        ],
     }
-
 
     constructor(element, options) {
         super(element)
@@ -31,7 +30,7 @@ export default class KGInputCheckBox extends BaseComponent {
 
     initElement() {
         const options = this.options
-        
+
         let fieldset = document.createElement('fieldset')
 
         let legend = document.createElement('legend')
@@ -55,7 +54,7 @@ export default class KGInputCheckBox extends BaseComponent {
             fieldset.appendChild(div)
         })
 
-        this.placeholder.append(fieldset)
         this.dom = fieldset
+        this.holder.append(fieldset)
     }
 }

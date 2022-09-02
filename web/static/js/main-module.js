@@ -22,23 +22,21 @@ export default class MainModule {
 
     initElement() {
         this.placeholder = document.getElementById('main')
+
         this.form = new KGForm(this.placeholder)
 
-        // Dummy.inputTextOptions.forEach(option => {
-        //     this.form.createField(option)
-        // })
+        Dummy.inputTextOptions.forEach(option => {
+            this.form.createField(option)
+        })
         
-        // this.form.createField(Dummy.checkboxOption)
-        // this.form.createField(Dummy.dateOptions)
-        // this.form.createField(Dummy.textareaOptions)
-        // this.form.createField(Dummy.radioOption)
+        this.form.createField(Dummy.checkboxOption)
+        this.form.createField(Dummy.dateOptions)
+        this.form.createField(Dummy.textareaOptions)
+        this.form.createField(Dummy.radioOption)
 
-        const group = new KGFieldset(this.form.placeholder, Dummy.fieldsetOptions)
         const field = this.form.createField(Dummy.checkboxOption)
-        console.log({field})
+        const group = new KGFieldset(this.form.body, Dummy.fieldsetOptions)
         group.addField(field)
-        
-        console.log({ dom: this.form.placeholder })
     }
 
     initListeners() {

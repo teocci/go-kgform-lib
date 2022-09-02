@@ -1,44 +1,44 @@
 import BaseComponent from '../base/base-component.js'
 
-export default class KGInputRadio extends BaseComponent{
-    
+export default class KGInputRadio extends BaseComponent {
+
     static TAG = 'radio'
 
     static DEFAULT_OPTIONS = {
         type: 'radio',
         legend: 'KG Input Radio',
-        name : 'kg',
+        name: 'kg',
         items: [
             {
                 id: 'kg1',
-                value : 'kg1',
+                value: 'kg1',
                 checked: true,
-                text : 'KG1'
+                text: 'KG1',
             },
             {
                 id: 'kg2',
-                value : 'kg2',
+                value: 'kg2',
                 checked: false,
-                text : 'KG2'
-            }
-        ]
+                text: 'KG2',
+            },
+        ],
     }
 
-    constructor(element, options){
+    constructor(element, options) {
         super(element)
 
         this.options = Object.assign(KGInputRadio.DEFAULT_OPTIONS, options)
         this.initElement()
     }
 
-    initElement(){
+    initElement() {
         const options = this.options
 
         const fieldset = document.createElement('fieldset')
-        
+
         const legend = document.createElement('legend')
         legend.textContent = options.legend
-        
+
         fieldset.append(legend)
 
         options.items.forEach((element) => {
@@ -55,10 +55,9 @@ export default class KGInputRadio extends BaseComponent{
 
             div.append(radio, label)
             fieldset.appendChild(div)
-        });
+        })
 
-        this.placeholder.append(fieldset)
         this.dom = fieldset
-        
+        this.holder.append(fieldset)
     }
 }

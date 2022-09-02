@@ -4,42 +4,68 @@ export default class BaseComponent extends BaseListener {
     constructor(element) {
         super()
 
+        this.holder = element
+    }
+
+    get holder() {
+        return this.placeholder
+    }
+
+    set holder(element) {
         this.placeholder = element
     }
 
-    get placeholder() {
+    get dom() {
         return this.element
     }
 
-    set placeholder(element) {
+    set dom(element) {
         this.element = element
     }
 
-    get dom () {
-        return this.domElement
+    append(...children) {
+        if (children == null) throw Error(`invalidParameter: null children`)
+        if (children.length < 1) throw Error(`invalidParameter: empty children`)
+
+        this.dom.append(children)
     }
 
-    set dom (element) {
-        this.domElement = element
+    appendChild(child) {
+        if (child == null) throw Error(`invalidParameter: null child`)
+
+        this.dom.appendChild(child)
+    }
+
+    appendToHolder(...children) {
+        if (children == null) throw Error(`invalidParameter: null children`)
+        if (children.length < 1) throw Error(`invalidParameter: empty children`)
+
+        this.holder.append(...children)
+    }
+
+    appendChildToHolder(child) {
+        if (child == null) throw Error(`invalidParameter: null child`)
+
+        this.holder.appendChild(child)
     }
 
     toggle(val) {
-        const element = this.placeholder
+        const element = this.dom
         element.classList.toggle('hidden', val)
     }
 
     show() {
-        const element = this.placeholder
+        const element = this.dom
         element.classList.remove('hidden')
     }
 
     hide() {
-        const element = this.placeholder
+        const element = this.dom
         element.classList.add('hidden')
     }
 
     destroyChildren(element) {
-        element = element ?? this.placeholder
+        element = element ?? this.dom
         while (element.firstChild) {
             const lastChild = element.lastChild ?? false
             if (lastChild) element.removeChild(lastChild)

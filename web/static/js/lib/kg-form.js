@@ -21,15 +21,16 @@ export default class KGForm extends BaseComponent {
         const form = document.createElement('form')
         form.classList.add('kg-form')
 
-        const div = document.createElement('div')
-        div.id = 'kg-form-btns'
+        const body = document.createElement('div')
+        body.classList.add('kg-form-body')
+
+        const footer = document.createElement('div')
+        footer.classList.add('kg-form-btns')
 
         const submitBtn = document.createElement('button')
         submitBtn.textContent = '전송'
 
-        submitBtn.onclick = e => {
-            this.onSubmitClick(e)
-        }
+        submitBtn.onclick = e => { this.onSubmitClick(e) }
 
         const cancelBtn = document.createElement('button')
         cancelBtn.textContent = '취소'
@@ -37,47 +38,45 @@ export default class KGForm extends BaseComponent {
             this.onCancelClick(e)
         }
 
-        div.append(submitBtn, cancelBtn)
-        form.appendChild(div)
-        this.placeholder.appendChild(form)
-        this.form = form
+        footer.append(submitBtn, cancelBtn)
+        form.append(body, footer)
+
+        this.body = body
         this.dom = form
+        this.holder.appendChild(form)
     }
 
     createField(options) {
         let field
         switch (options.type) {
             case KGInputText.TAG:
-                field = new KGInputText(this.form, options)
-                break;
+                field = new KGInputText(this.body, options)
+                break
 
             case KGInputCheckBox.TAG:
-                field = new KGInputCheckBox(this.form, options)
-                break;
+                field = new KGInputCheckBox(this.body, options)
+                break
 
             case KGInputDate.TAG:
-                field = new KGInputDate(this.form, options)
-                break;
+                field = new KGInputDate(this.body, options)
+                break
 
             case KGTextArea.TAG:
-                field = new KGTextArea(this.form, options)
-                break;
+                field = new KGTextArea(this.body, options)
+                break
 
             case KGInputRadio.TAG:
-                field = new KGInputRadio(this.form, options)
-                break;
+                field = new KGInputRadio(this.body, options)
+                break
 
             default:
-                throw new Error('no type supported');
-                break;
+                throw new Error('no type supported')
         }
 
         this.fields.set(options.id, field)
-        
+
         return field.dom
     }
-
-
 
     onSubmitClick(e) {
         e.preventDefault()

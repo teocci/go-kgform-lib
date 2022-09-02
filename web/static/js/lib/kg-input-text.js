@@ -1,4 +1,4 @@
-import BaseComponent from "../base/base-component.js"
+import BaseComponent from '../base/base-component.js'
 
 export default class KGInputText extends BaseComponent {
 
@@ -18,7 +18,7 @@ export default class KGInputText extends BaseComponent {
         super(element)
 
         this.options = Object.assign(KGInputText.DEFAULT_OPTIONS, options)
-        
+
         this.initElement()
     }
 
@@ -38,12 +38,10 @@ export default class KGInputText extends BaseComponent {
         options.minLength ? input.minLength = options.minLength : null
         options.maxLength ? input.maxLength = options.maxLength : null
         options.size ? input.size = options.size : null
-        
 
         div.append(label, input)
 
-        const reference = document.getElementById('kg-form-btns')
-        this.placeholder.insertBefore(div, reference)
         this.dom = div
+        this.holder.appendChild(div)
     }
 }

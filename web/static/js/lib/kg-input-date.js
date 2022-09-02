@@ -9,10 +9,9 @@ export default class KGInputDate extends BaseComponent {
         id: '',
         name: '',
         value: currentDate(),
-        min : null,
-        max : null,
+        min: null,
+        max: null,
     }
-
 
     constructor(element, options) {
         super(element)
@@ -39,7 +38,7 @@ export default class KGInputDate extends BaseComponent {
         let div = document.createElement('div')
         div.append(label, inputDate)
 
-        this.placeholder.append(div)
         this.dom = div
+        this.holder.append(div)
     }
 }
