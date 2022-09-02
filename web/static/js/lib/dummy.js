@@ -85,7 +85,7 @@ export default class Dummy {
     static dateOptions = {
         type: 'date',
         title: 'Start date:',
-        
+
         id: 'start',
         name: 'trip-start',
         // value: '2018-07-22',
@@ -99,5 +99,12 @@ export default class Dummy {
         id : 'story',
         rows : '5',
         cols : '20',
+    }
+
+    
+    static fieldsetOptions = {
+        type : 'fieldset',
+        legend : '이것은 필드셋 레전드다',
+        name : 'group'
     }
 }

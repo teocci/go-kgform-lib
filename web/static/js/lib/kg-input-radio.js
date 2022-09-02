@@ -57,10 +57,8 @@ export default class KGInputRadio extends BaseComponent{
             fieldset.appendChild(div)
         });
 
-        this.dom.append(fieldset)
-
-
-
+        this.placeholder.append(fieldset)
+        this.dom = fieldset
         
     }
 }

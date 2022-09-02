@@ -55,6 +55,7 @@ export default class KGInputCheckBox extends BaseComponent {
             fieldset.appendChild(div)
         })
 
-        this.dom.append(fieldset)
+        this.placeholder.append(fieldset)
+        this.dom = fieldset
     }
 }

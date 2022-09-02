@@ -39,6 +39,7 @@ export default class KGInputDate extends BaseComponent {
         let div = document.createElement('div')
         div.append(label, inputDate)
 
-        this.dom.append(div)
+        this.placeholder.append(div)
+        this.dom = div
     }
 }

@@ -43,6 +43,7 @@ export default class KGInputText extends BaseComponent {
         div.append(label, input)
 
         const reference = document.getElementById('kg-form-btns')
-        this.dom.insertBefore(div, reference)
+        this.placeholder.insertBefore(div, reference)
+        this.dom = div
     }
 }

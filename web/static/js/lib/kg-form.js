@@ -39,9 +39,9 @@ export default class KGForm extends BaseComponent {
 
         div.append(submitBtn, cancelBtn)
         form.appendChild(div)
-        this.dom.appendChild(form)
+        this.placeholder.appendChild(form)
         this.form = form
-
+        this.dom = form
     }
 
     createField(options) {
@@ -73,6 +73,8 @@ export default class KGForm extends BaseComponent {
         }
 
         this.fields.set(options.id, field)
+        
+        return field.dom
     }
 
 

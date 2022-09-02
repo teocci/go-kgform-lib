@@ -34,6 +34,7 @@ export default class KGTextArea extends BaseComponent{
         let div = document.createElement('div')
         div.append(label, textarea)
         
-        this.dom.appendChild(div)
+        this.placeholder.appendChild(div)
+        this.dom = div
     }
 }
