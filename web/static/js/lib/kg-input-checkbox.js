@@ -4,29 +4,34 @@ export default class KGInputCheckBox extends BaseComponent {
 
     static TAG = 'checkbox'
 
+    static DEFAULT_OPTIONS = {
+        type: 'checkbox',
+        legend: 'kg-checkbox',
+        items: [
+            {
+                id: '',
+                checked: false,
+                text: '',
+            },
+            {
+                id: '',
+                checked: false,
+                text: '',
+            },
+        ]
+    }
+
+
     constructor(element, options) {
         super(element)
 
-        this.options = options
+        this.options = Object.assign(KGInputCheckBox.DEFAULT_OPTIONS, options)
         this.initElement()
     }
 
     initElement() {
         const options = this.options
-    /**
-    options = {
-        type : 'checkbox',        
-        legend : 'legend name',
-        items : [
-                {
-                    id : id,
-                    checked : true,
-                    text : content
-                },
-            ]
-    }
-    */
-
+        
         let fieldset = document.createElement('fieldset')
 
         let legend = document.createElement('legend')

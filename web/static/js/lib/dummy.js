@@ -35,6 +35,7 @@ export default class Dummy {
             name: 'test-name',
             required: true,
         },
+
     ]
 
 
@@ -55,20 +56,48 @@ export default class Dummy {
         ]
     }
 
+    static radioOption = {
+        type: 'radio',
+        legend: 'Select a maintenance drone',
+        name : 'drone',
+        items: [
+            {
+                id: 'huey',
+                value : 'huey',
+                checked: true,
+                text : 'Huey'
+            },
+            {
+                id: 'dewey',
+                value : 'dewey',
+                checked: false,
+                text : 'Dewey'
+            },
+            {
+                id: 'louie',
+                value : 'louie',
+                checked: false,
+                text : 'Louie'
+            },
+        ]
+    }
+
     static dateOptions = {
         type: 'date',
         title: 'Start date:',
+        
         id: 'start',
         name: 'trip-start',
-        value: '2018-07-22',
-        min: '2018-01-01',
-        max: '2018-12-31',
+        // value: '2018-07-22',
+        // min: '2018-01-01',
+         max: '2022-12-31',
     }
 
     static textareaOptions = {
         type : 'textarea',
         title : 'Tell us your story',
         id : 'story',
-        
+        rows : '5',
+        cols : '20',
     }
 }

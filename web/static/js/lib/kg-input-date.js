@@ -3,22 +3,23 @@ import BaseComponent from '../base/base-component.js'
 export default class KGInputDate extends BaseComponent {
     static TAG = 'date'
 
+    static DEFAULT_OPTIONS = {
+        type: 'date',
+        title: 'kg-date',
+        id: '',
+        name: '',
+        value: currentDate(),
+        min : null,
+        max : null,
+    }
+
+
     constructor(element, options) {
         super(element)
 
-        this.options = options
+        this.options = Object.assign(KGInputDate.DEFAULT_OPTIONS, options)
         this.initElement()
     }
-
-    //    options = {
-    //         title : 'title',
-    //         type : 'date',
-    //         id : 'id',
-    //         name : '',
-    //         value : '2022-08-23',
-    //         min : '2022-01-01',
-    //         max : '2022-12-31',    
-    //     }
 
     initElement() {
         const options = this.options
@@ -32,8 +33,8 @@ export default class KGInputDate extends BaseComponent {
         inputDate.id = options.id
         inputDate.name = options.name
         inputDate.value = options.value
-        inputDate.min = options.min
-        inputDate.max = options.max
+        options.min ? inputDate.min = options.min : null
+        options.max ? inputDate.max = options.max : null
 
         let div = document.createElement('div')
         div.append(label, inputDate)

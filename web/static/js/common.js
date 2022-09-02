@@ -47,3 +47,8 @@ function wait(ms, fn) {
     while (end < start + ms) end = performance.now()
     if (fn instanceof Function) fn()
 }
+
+function currentDate(){
+    const today = new Date();
+    return  `${today.getFullYear()}-${today.getMonth()+1}-${today.getDate()}`
+}

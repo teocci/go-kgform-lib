@@ -30,6 +30,7 @@ export default class MainModule {
         this.form.createField(Dummy.checkboxOption)
         this.form.createField(Dummy.dateOptions)
         this.form.createField(Dummy.textareaOptions)
+        this.form.createField(Dummy.radioOption)
 
         console.log({ dom: this.form.dom })
     }

@@ -24,7 +24,6 @@ export default class KGInputText extends BaseComponent {
 
     initElement() {
         const options = this.options
-        console.log(options)
         const div = document.createElement('div')
 
         const label = document.createElement('label')
