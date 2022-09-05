@@ -34,7 +34,10 @@ export default class MainModule {
         this.form.createField(Dummy.checkboxOption)
         this.form.createField(Dummy.dateOptions)
         this.form.createField(Dummy.textareaOptions)
-        this.form.createField(Dummy.radioOption)
+        const radio = this.form.createField(Dummy.radioOption)
+        group.addField(radio)
+
+        this.form.createField(Dummy.rangeOptions)
     }
 
     initListeners() {

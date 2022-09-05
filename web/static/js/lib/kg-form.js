@@ -2,6 +2,7 @@ import BaseComponent from '../base/base-component.js'
 import KGInputCheckBox from './kg-input-checkbox.js'
 import KGInputDate from './kg-input-date.js'
 import KGInputRadio from './kg-input-radio.js'
+import KGInputRange from './kg-input-range.js'
 import KGInputText from './kg-input-text.js'
 import KGTextArea from './kg-textarea.js'
 
@@ -50,6 +51,8 @@ export default class KGForm extends BaseComponent {
         let field
         switch (options.type) {
             case KGInputText.TAG:
+            case 'email':
+            case 'password':
                 field = new KGInputText(this.body, options)
                 break
 
@@ -67,6 +70,10 @@ export default class KGForm extends BaseComponent {
 
             case KGInputRadio.TAG:
                 field = new KGInputRadio(this.body, options)
+                break
+
+            case KGInputRange.TAG:
+                field = new KGInputRange(this.body, options)
                 break
 
             default:

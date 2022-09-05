@@ -16,16 +16,16 @@ export default class Dummy {
         },
         {
             id: 'test3',
-            label: 'title3',
-            type: 'text',
-            name: 'test-name',
+            label: 'email을 입력하세요',
+            type: 'email',
+            name: 'test-email',
             required: true,
         },
         {
             id: 'test4',
-            label: 'title4',
-            type: 'text',
-            name: 'test-name',
+            label: '비밀번호를 입력하세요',
+            type: 'password',
+            name: 'test-passwd',
             required: true,
         },
         {
@@ -102,5 +102,24 @@ export default class Dummy {
         type: 'fieldset',
         legend: '이것은 필드셋 레전드다',
         name: 'group',
+    }
+
+    static rangeOptions = {
+        legend : 'Weather',
+        type : 'range',
+        items : [
+            {
+                id : 'temperature',
+                label : 'Temperature',
+                min : '25',
+                max : '40',
+            }, 
+            {
+                id : 'humidity',
+                label : 'Humidity',
+                min : '40',
+                max : '100',
+            },    
+        ]
     }
 }
