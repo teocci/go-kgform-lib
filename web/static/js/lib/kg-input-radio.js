@@ -1,7 +1,6 @@
 import BaseComponent from '../base/base-component.js'
 
 export default class KGInputRadio extends BaseComponent {
-
     static TAG = 'radio'
 
     static DEFAULT_OPTIONS = {

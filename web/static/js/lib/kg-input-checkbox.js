@@ -1,7 +1,6 @@
 import BaseComponent from '../base/base-component.js'
 
 export default class KGInputCheckBox extends BaseComponent {
-
     static TAG = 'checkbox'
 
     static DEFAULT_OPTIONS = {

@@ -1,7 +1,6 @@
 import BaseComponent from '../base/base-component.js'
 
 export default class KGInputText extends BaseComponent {
-
     static TAG = 'text'
     static DEFAULT_OPTIONS = {
         type: KGInputText.TAG,
@@ -35,7 +34,7 @@ export default class KGInputText extends BaseComponent {
         input.id = options.id
         input.requiered = options.requiered
 
-        if (!isNull(options.name)) input.minLength = options.name
+        if (!isNull(options.name)) input.name = options.name
         if (!isNull(options.minLength)) input.minLength = options.minLength
         if (!isNull(options.maxLength)) input.maxLength = options.maxLength
         if (!isNull(options.size)) input.size = options.size
