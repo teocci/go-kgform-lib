@@ -40,16 +40,26 @@ export default class Dummy {
     static checkboxOption = {
         type: 'checkbox',
         legend: 'Choose your monster features',
-        items: [
+        inputs: [
             {
                 id: 'scales',
+                label: 'Scales',
                 checked: true,
-                text: 'Scales',
             },
             {
                 id: 'horns',
+                label: 'Horns',
                 checked: false,
-                text: 'Horns',
+            },
+            {
+                id: 'fangs',
+                label: 'Fangs',
+                checked: false,
+            },
+            {
+                id: 'wings',
+                label: 'Wings',
+                checked: false,
             },
         ],
     }
@@ -105,38 +115,38 @@ export default class Dummy {
     }
 
     static rangeOptions = {
-        legend : 'Weather',
-        type : 'range',
-        items : [
+        legend: 'Weather',
+        type: 'range',
+        items: [
             {
-                id : 'temperature',
-                label : 'Temperature',
-                min : '25',
-                max : '40',
-            }, 
+                id: 'temperature',
+                label: 'Temperature',
+                min: '25',
+                max: '40',
+            },
             {
-                id : 'humidity',
-                label : 'Humidity',
-                min : '40',
-                max : '100',
-            },    
-        ]
+                id: 'humidity',
+                label: 'Humidity',
+                min: '40',
+                max: '100',
+            },
+        ],
     }
 
     static selectOptions = {
-        type : 'select',
-        legend : 'Choose a pet',
-        id : 'pet-select',
-        name : 'pets',
-        items : [
+        type: 'select',
+        legend: 'Choose a pet',
+        id: 'pet-select',
+        name: 'pets',
+        items: [
             {
-                value : 'dog',
-                text : 'Dog'
+                value: 'dog',
+                text: 'Dog',
             },
             {
-                value : 'cat',
-                text : 'CAT'
+                value: 'cat',
+                text: 'CAT',
             },
-        ]
+        ],
     }
 }

@@ -1,5 +1,5 @@
 import BaseComponent from '../base/base-component.js'
-import KGInputCheckBox from './kg-input-checkbox.js'
+import KGFieldCheckbox from './kg-field-checkbox.js'
 import KGInputDate from './kg-input-date.js'
 import KGInputRadio from './kg-input-radio.js'
 import KGInputRange from './kg-input-range.js'
@@ -62,8 +62,8 @@ export default class KGForm extends BaseComponent {
                 field = new KgInputPassword(this.body, options)
                 break
 
-            case KGInputCheckBox.TAG:
-                field = new KGInputCheckBox(this.body, options)
+            case KGFieldCheckbox.TAG:
+                field = new KGFieldCheckbox(this.body, options)
                 break
 
             case KGInputDate.TAG:

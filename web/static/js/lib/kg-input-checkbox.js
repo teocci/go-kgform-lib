@@ -1,66 +1,46 @@
-import BaseComponent from '../base/base-component.js'
-import KGInputGroup from './kg-input-group.js'
+/**
+ * Created by RTT.
+ * Author: teocci@yandex.com on 2022-9월-06
+ */
+import BaseInput from '../base/BaseInput.js'
 
-export default class KGInputCheckBox extends BaseComponent {
+export default class KGInputCheckbox extends BaseInput {
     static TAG = 'checkbox'
 
     static DEFAULT_OPTIONS = {
-        type: 'checkbox',
-        legend: 'kg-checkbox',
-        items: [
-            {
-                id: '',
-                checked: false,
-                text: '',
-            },
-            {
-                id: '',
-                checked: false,
-                text: '',
-            },
-        ],
+        type: KGInputCheckbox.TAG,
+        id: null,
+        label: null,
+        name: null,
+        checked: false,
+        value: null,
     }
 
     constructor(element, options) {
-        super(element)
+        super(element, options)
 
-        this.options = Object.assign(KGInputCheckBox.DEFAULT_OPTIONS, options)
         this.initElement()
     }
 
     initElement() {
         const options = this.options
 
-        const fieldset = document.createElement('fieldset')
+        const field = document.createElement('div')
 
-        const legend = document.createElement('legend')
-        legend.textContent = options.legend
+        const label = document.createElement('label')
+        if (!isNull(options.id)) label.htmlFor = options.id
+        if (!isNull(options.label)) label.textContent = options.label
 
-        fieldset.appendChild(legend)
+        const input = document.createElement('input')
+        input.type = this.tag
+        if (!isNull(options.id)) input.id = options.id
+        if (!isNull(options.checked)) input.checked = options.checked
+        if (!isNull(options.value)) input.value = options.value
+        if (!isNull(options.name)) input.name = options.name
 
-        options.items.forEach((item) => {
-            let group = new KGInputGroup(KGInputCheckBox.TAG, item)
-            fieldset.appendChild(group.makeInputGroup())
-            
-            // const field = document.createElement('div')
-            // const checkbox = document.createElement('input')
-            // checkbox.type = 'checkbox'
-            // checkbox.id = item.id
-            // checkbox.name = item.id
-            // checkbox.checked = item.checked
+        field.append(label, input)
 
-            // const label = document.createElement('label')
-            // label.htmlFor = item.id
-            // label.textContent = item.text
-
-
-            // field.append(checkbox, label)
-            // console.log(field)
-            // fieldset.appendChild(field)
-           
-        })
-
-        this.dom = fieldset
-        this.holder.append(fieldset)
+        this.dom = field
+        this.holder.append(field)
     }
 }
