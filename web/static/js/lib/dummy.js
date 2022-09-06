@@ -122,4 +122,21 @@ export default class Dummy {
             },    
         ]
     }
+
+    static selectOptions = {
+        type : 'select',
+        legend : 'Choose a pet',
+        id : 'pet-select',
+        name : 'pets',
+        items : [
+            {
+                value : 'dog',
+                text : 'Dog'
+            },
+            {
+                value : 'cat',
+                text : 'CAT'
+            },
+        ]
+    }
 }

@@ -38,6 +38,7 @@ export default class MainModule {
         group.addField(radio)
 
         this.form.createField(Dummy.rangeOptions)
+        this.form.createField(Dummy.selectOptions)
     }
 
     initListeners() {

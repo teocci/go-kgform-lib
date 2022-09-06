@@ -1,4 +1,5 @@
 import BaseComponent from '../base/base-component.js'
+import KGInputGroup from './kg-input-group.js'
 
 export default class KGInputCheckBox extends BaseComponent {
     static TAG = 'checkbox'
@@ -38,19 +39,25 @@ export default class KGInputCheckBox extends BaseComponent {
         fieldset.appendChild(legend)
 
         options.items.forEach((item) => {
-            const field = document.createElement('div')
-            const checkbox = document.createElement('input')
-            checkbox.type = 'checkbox'
-            checkbox.id = item.id
-            checkbox.name = item.id
-            checkbox.checked = item.checked
+            let group = new KGInputGroup(KGInputCheckBox.TAG, item)
+            fieldset.appendChild(group.makeInputGroup())
+            
+            // const field = document.createElement('div')
+            // const checkbox = document.createElement('input')
+            // checkbox.type = 'checkbox'
+            // checkbox.id = item.id
+            // checkbox.name = item.id
+            // checkbox.checked = item.checked
 
-            const label = document.createElement('label')
-            label.htmlFor = item.id
-            label.textContent = item.text
+            // const label = document.createElement('label')
+            // label.htmlFor = item.id
+            // label.textContent = item.text
 
-            field.append(checkbox, label)
-            fieldset.appendChild(field)
+
+            // field.append(checkbox, label)
+            // console.log(field)
+            // fieldset.appendChild(field)
+           
         })
 
         this.dom = fieldset
