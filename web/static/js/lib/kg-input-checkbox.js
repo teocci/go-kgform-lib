@@ -2,7 +2,7 @@
  * Created by RTT.
  * Author: teocci@yandex.com on 2022-9월-06
  */
-import BaseInput from '../base/BaseInput.js'
+import BaseInput from '../base/base-input.js'
 
 export default class KGInputCheckbox extends BaseInput {
     static TAG = 'checkbox'

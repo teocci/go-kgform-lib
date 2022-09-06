@@ -1,6 +1,6 @@
-import BaseComponent from '../base/base-component.js'
+import BaseInput from '../base/base-input.js'
 
-export default class KGInputText extends BaseComponent {
+export default class KGInputText extends BaseInput {
     static TAG = 'text'
     static DEFAULT_OPTIONS = {
         type: KGInputText.TAG,
@@ -14,7 +14,7 @@ export default class KGInputText extends BaseComponent {
     }
 
     constructor(element, options) {
-        super(element)
+        super(element, options)
 
         this.options = Object.assign(KGInputText.DEFAULT_OPTIONS, options)
 
