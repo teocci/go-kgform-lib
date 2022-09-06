@@ -5,13 +5,6 @@
 import BaseInput from './BaseInput.js'
 
 export default class BaseField extends BaseInput {
-    static DEFAULT_INPUT_OPTIONS = {
-        id: undefined,
-        label: undefined,
-        checked: undefined,
-        value: undefined,
-    }
-
     constructor(element, options) {
         super(element, options)
 
