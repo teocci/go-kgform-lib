@@ -8,6 +8,7 @@ import KGTextArea from './kg-textarea.js'
 import KgInputPassword from './kg-input-password.js'
 import KgInputEmail from './kg-input-email.js'
 import KGSelect from './kg-select.js'
+import KGFieldRadio from './kg-field-radio.js'
 
 export default class KGForm extends BaseComponent {
     static TAG = 'form'
@@ -74,8 +75,8 @@ export default class KGForm extends BaseComponent {
                 field = new KGTextArea(this.body, options)
                 break
 
-            case KGInputRadio.TAG:
-                field = new KGInputRadio(this.body, options)
+            case KGFieldRadio.TAG:
+                field = new KGFieldRadio(this.body, options)
                 break
 
             case KGInputRange.TAG:

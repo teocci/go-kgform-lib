@@ -68,7 +68,7 @@ export default class Dummy {
         type: 'radio',
         legend: 'Select a maintenance drone',
         name: 'drone',
-        items: [
+        inputs: [
             {
                 id: 'huey',
                 value: 'huey',

@@ -1,34 +1,35 @@
 import BaseField from '../base/base-field.js'
-import KGInputCheckbox from './kg-input-checkbox.js'
+import KGInputRadio from './kg-input-radio.js'
 
-export default class KGFieldCheckbox extends BaseField {
-    static TAG = 'checkbox'
+export default class KGFieldRadio extends BaseField{
+    static TAG = 'radio'
 
     static DEFAULT_OPTIONS = {
-        type: KGFieldCheckbox.TAG,
+        type: KGFieldRadio.TAG,
         legend: null,
-        group: `kg-${KGFieldCheckbox.TAG}-group`,
+        group: `kg-${KGFieldRadio.TAG}-group`,
         inputs: [],
     }
 
-    constructor(element, options) {
+    constructor(element, options){
         super(element, options)
-
         this.initElement()
     }
 
-    initElement() {
+    initElement(){
         const options = this.options
-        if (isNull(options.inputs)) throw Error('invalidParameter: null checkboxes')
-        if (options.inputs.length === 0) throw Error('invalidParameter: empty checkboxes')
+        if (isNull(options.inputs)) throw Error('invalidParameter: null radios')
+        if (options.inputs.length === 0) throw Error('invalidParameter: empty radios')
 
         const fieldset = document.createElement('fieldset')
         const legend = document.createElement('legend')
         if (!isNull(options.legend)) legend.textContent = options.legend
         fieldset.appendChild(legend)
 
+        console.log(options)
+
         options.inputs.forEach((item) => {
-            new KGInputCheckbox(fieldset, item)
+            new KGInputRadio(fieldset, item)
         })
 
         this.dom = fieldset
