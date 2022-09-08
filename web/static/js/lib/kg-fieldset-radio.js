@@ -13,6 +13,7 @@ export default class KGFieldsetRadio extends KGFieldset {
         legend: undefined,
         group: `kg-${KGFieldsetRadio.TAG}-group`,
         inputs: [],
+        useFieldset: true,
     }
 
     constructor(element, options) {

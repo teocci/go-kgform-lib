@@ -1,6 +1,7 @@
 import KGForm from "./lib/kg-form.js"
 import Dummy from "./lib/dummy.js"
 import KGFieldset from "./lib/kg-fieldset.js"
+import KGFieldsetRadio from "./lib/kg-fieldset-radio.js"
 
 /**
  * Created by RTT.
@@ -23,23 +24,30 @@ export default class MainModule {
     initElement() {
         this.placeholder = document.getElementById('main')
 
-        this.form = new KGForm(this.placeholder)
+        const form = new KGForm(this.placeholder)
 
-        const group = new KGFieldset(this.form.body, Dummy.fieldsetOptions)
+        const group = new KGFieldset(form.body, Dummy.fieldsetOptions)
         Dummy.inputTextOptions.forEach(option => {
-            const field = this.form.createField(option)
+            const field = form.createField(option)
             group.addField(field)
         })
 
-        const radio = this.form.createField(Dummy.radioOption)
-        group.addField(radio)
-        
-        this.form.createField(Dummy.checkboxOption)
-        this.form.createField(Dummy.dateOptions)
-        this.form.createField(Dummy.textareaOptions)
+        const radioBad = form.createField(Dummy.radioOption)
+        group.addField(radioBad)
 
-        this.form.createField(Dummy.rangeOptions)
-        this.form.createField(Dummy.selectOptions)
+        const radio = new KGFieldsetRadio(form.body, Dummy.radioOption2)
+        radio.fields.forEach( field => {
+            field.input.onchange = e => { console.log(`${e.target.id} has changed`)}
+        })
+    
+        form.createField(Dummy.checkboxOption)
+        form.createField(Dummy.dateOptions)
+        form.createField(Dummy.textareaOptions)
+
+        form.createField(Dummy.rangeOptions)
+        form.createField(Dummy.selectOptions)
+
+        this.form = form
     }
 
     initListeners() {

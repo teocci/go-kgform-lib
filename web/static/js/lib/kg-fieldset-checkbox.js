@@ -13,6 +13,7 @@ export default class KGFieldsetCheckbox extends KGFieldset {
         legend: undefined,
         group: `kg-${KGFieldsetCheckbox.TAG}-group`,
         inputs: [],
+        useFieldset: true,
     }
 
     constructor(element, options) {

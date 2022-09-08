@@ -90,6 +90,34 @@ export default class Dummy {
         ],
     }
 
+    static radioOption2 = {
+        type: 'radio',
+        legend: 'Select a brand',
+        name: 'brand',
+        useFieldset: true,
+        inputs: [
+            {
+                id: 'sony',
+                label: 'Sony',
+                value: 'sony',
+                checked: true,
+            },
+            {
+                id: 'samsung',
+                label: 'Samsung',
+                value: 'samsung',
+                checked: false,
+            },
+            {
+                id: 'lg',
+                label: 'LG',
+                value: 'lg',
+                checked: false,
+            },
+        ],
+    }
+
+
     static dateOptions = {
         type: 'date',
         label: 'Start date:',
