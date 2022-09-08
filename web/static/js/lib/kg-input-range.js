@@ -2,13 +2,13 @@
  * Created by RTT.
  * Author: teocci@yandex.com on 2022-9월-08
  */
-import BaseInput from '../base/base-input.js'
+import BaseComponent from '../base/base-component.js'
 
-export default class KGInputRange extends BaseInput {
+export default class KGInputRange extends BaseComponent {
     static TAG = 'range'
     static DEFAULT_OPTIONS = {
-        legend: '',
         type: KGInputRange.TAG,
+        legend: '',
         items: [
             {
                 id: 'kg-id-1',
