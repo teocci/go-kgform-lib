@@ -71,7 +71,8 @@ export default class KGFieldset extends BaseField {
         if (fields.length === 0) throw Error('Invalid fields : empty fields')
 
         fields.forEach((element, idx) => {
-            this.fields.set(`${name}-${idx}`, element)
+            const id = element.id ?? `${name}-${idx}`
+            this.fields.set(id, element)
             this.dom.appendChild(element)
         })
     }

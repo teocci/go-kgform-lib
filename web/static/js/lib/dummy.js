@@ -117,7 +117,6 @@ export default class Dummy {
         ],
     }
 
-
     static dateOptions = {
         type: 'date',
         label: 'Start date:',

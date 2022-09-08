@@ -29,7 +29,8 @@ export default class KGFieldsetRadio extends KGFieldset {
         if (!isNull(inputs) && inputs.length > 0) {
             inputs.forEach((input, idx) => {
                 const field = new KGInputRadio(content, input)
-                this.fields.set(`${group}-${idx}`, field)
+                const id = input.id ?? `${group}-${idx}`
+                this.fields.set(id, field)
             })
         }
     }
