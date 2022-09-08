@@ -1,6 +1,10 @@
-import BaseComponent from '../base/base-component.js'
+/**
+ * Created by RTT.
+ * Author: teocci@yandex.com on 2022-9월-08
+ */
+import BaseInput from '../base/base-input.js'
 
-export default class KGInputRange extends BaseComponent {
+export default class KGInputRange extends BaseInput {
     static TAG = 'range'
     static DEFAULT_OPTIONS = {
         legend: '',

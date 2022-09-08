@@ -71,21 +71,21 @@ export default class Dummy {
         inputs: [
             {
                 id: 'huey',
+                label: 'Huey',
                 value: 'huey',
                 checked: true,
-                text: 'Huey',
             },
             {
                 id: 'dewey',
+                label: 'Dewey',
                 value: 'dewey',
                 checked: false,
-                text: 'Dewey',
             },
             {
                 id: 'louie',
+                label: 'Louie',
                 value: 'louie',
                 checked: false,
-                text: 'Louie',
             },
         ],
     }

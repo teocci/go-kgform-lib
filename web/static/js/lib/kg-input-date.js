@@ -1,6 +1,10 @@
-import BaseComponent from '../base/base-component.js'
+/**
+ * Created by RTT.
+ * Author: teocci@yandex.com on 2022-9월-08
+ */
+import BaseInput from '../base/base-input.js'
 
-export default class KGInputDate extends BaseComponent {
+export default class KGInputDate extends BaseInput {
     static TAG = 'date'
 
     static DEFAULT_OPTIONS = {
@@ -14,31 +18,15 @@ export default class KGInputDate extends BaseComponent {
     }
 
     constructor(element, options) {
-        super(element)
+        super(element, options)
 
-        this.options = Object.assign(KGInputDate.DEFAULT_OPTIONS, options)
         this.initElement()
     }
 
     initElement() {
         const options = this.options
-
-        const label = document.createElement('label')
-        label.htmlFor = options.id
-        label.textContent = options.label
-
-        const input = document.createElement('input')
-        input.type = KGInputDate.TAG
-        input.id = options.id
-        input.name = options.name
-        input.value = options.value
+        const input = this.input
         if (!isNull(options.min)) input.min = options.min
         if (!isNull(options.max)) input.max = options.max
-
-        const field = document.createElement('div')
-        field.append(label, input)
-
-        this.dom = field
-        this.holder.append(field)
     }
 }

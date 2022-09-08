@@ -12,8 +12,9 @@ export default class KGInputCheckbox extends BaseInput {
         id: null,
         label: null,
         name: null,
+        value: undefined,
         checked: false,
-        value: null,
+        indeterminate: undefined,
     }
 
     constructor(element, options) {
@@ -24,23 +25,8 @@ export default class KGInputCheckbox extends BaseInput {
 
     initElement() {
         const options = this.options
-
-        const field = document.createElement('div')
-
-        const label = document.createElement('label')
-        if (!isNull(options.id)) label.htmlFor = options.id
-        if (!isNull(options.label)) label.textContent = options.label
-
-        const input = document.createElement('input')
-        input.type = this.tag
-        if (!isNull(options.id)) input.id = options.id
+        const input = this.input
         if (!isNull(options.checked)) input.checked = options.checked
-        if (!isNull(options.value)) input.value = options.value
-        if (!isNull(options.name)) input.name = options.name
-
-        field.append(label, input)
-
-        this.dom = field
-        this.holder.append(field)
+        if (!isNull(options.indeterminate)) input.indeterminate = options.indeterminate
     }
 }

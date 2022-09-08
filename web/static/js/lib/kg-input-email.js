@@ -4,6 +4,6 @@
  */
 import KGInputText from './kg-input-text.js'
 
-export default class KgInputEmail extends KGInputText {
+export default class KGInputEmail extends KGInputText {
     static TAG = 'email'
 }

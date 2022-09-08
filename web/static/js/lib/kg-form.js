@@ -1,14 +1,13 @@
 import BaseComponent from '../base/base-component.js'
-import KGFieldCheckbox from './kg-field-checkbox.js'
 import KGInputDate from './kg-input-date.js'
-import KGInputRadio from './kg-input-radio.js'
 import KGInputRange from './kg-input-range.js'
 import KGInputText from './kg-input-text.js'
 import KGTextArea from './kg-textarea.js'
-import KgInputPassword from './kg-input-password.js'
-import KgInputEmail from './kg-input-email.js'
+import KGInputPassword from './kg-input-password.js'
+import KGInputEmail from './kg-input-email.js'
 import KGSelect from './kg-select.js'
-import KGFieldRadio from './kg-field-radio.js'
+import KGFieldsetCheckbox from './kg-fieldset-checkbox.js'
+import KGFieldsetRadio from './kg-fieldset-radio.js'
 
 export default class KGForm extends BaseComponent {
     static TAG = 'form'
@@ -56,15 +55,21 @@ export default class KGForm extends BaseComponent {
             case KGInputText.TAG:
                 field = new KGInputText(this.body, options)
                 break
-            case KgInputEmail.TAG:
-                field = new KgInputEmail(this.body, options)
-                break
-            case KgInputPassword.TAG:
-                field = new KgInputPassword(this.body, options)
+
+            case KGInputEmail.TAG:
+                field = new KGInputEmail(this.body, options)
                 break
 
-            case KGFieldCheckbox.TAG:
-                field = new KGFieldCheckbox(this.body, options)
+            case KGInputPassword.TAG:
+                field = new KGInputPassword(this.body, options)
+                break
+
+            case KGFieldsetCheckbox.TAG:
+                field = new KGFieldsetCheckbox(this.body, options)
+                break
+
+            case KGFieldsetRadio.TAG:
+                field = new KGFieldsetRadio(this.body, options)
                 break
 
             case KGInputDate.TAG:
@@ -73,10 +78,6 @@ export default class KGForm extends BaseComponent {
 
             case KGTextArea.TAG:
                 field = new KGTextArea(this.body, options)
-                break
-
-            case KGFieldRadio.TAG:
-                field = new KGFieldRadio(this.body, options)
                 break
 
             case KGInputRange.TAG:

@@ -4,6 +4,6 @@
  */
 import KGInputText from './kg-input-text.js'
 
-export default class KgInputPassword extends KGInputText {
+export default class KGInputPassword extends KGInputText {
     static TAG = 'password'
 }

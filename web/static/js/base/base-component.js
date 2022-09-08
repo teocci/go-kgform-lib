@@ -23,6 +23,10 @@ export default class BaseComponent extends BaseListener {
         this.element = element
     }
 
+    get tag () {
+        return this.constructor.TAG
+    }
+
     append(...children) {
         if (children == null) throw Error(`invalidParameter: null children`)
         if (children.length < 1) throw Error(`invalidParameter: empty children`)

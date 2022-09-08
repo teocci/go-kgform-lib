@@ -1,3 +1,7 @@
+/**
+ * Created by RTT.
+ * Author: teocci@yandex.com on 2022-9월-08
+ */
 import BaseComponent from '../base/base-component.js'
 
 export default class KGTextArea extends BaseComponent {
