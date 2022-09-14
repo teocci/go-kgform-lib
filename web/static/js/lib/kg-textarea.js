@@ -18,7 +18,6 @@ export default class KGTextArea extends BaseComponent {
     constructor(element, options) {
         super(element)
         this.options = Object.assign(KGTextArea.DEFAULT_OPTIONS, options)
-        console.log(this.options)
         this.initElement()
     }
 

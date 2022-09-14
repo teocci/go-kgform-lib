@@ -22,9 +22,9 @@ export default class MainModule {
     }
 
     initElement() {
-        this.placeholder = document.getElementById('main')
-
-        const form = new KGForm(this.placeholder)
+        const holder = document.getElementById('main')
+        
+        const form = new KGForm(holder)
 
         const group = new KGFieldset(form.body, Dummy.fieldsetOptions)
         Dummy.inputTextOptions.forEach(option => {
@@ -46,12 +46,12 @@ export default class MainModule {
 
         form.createField(Dummy.rangeOptions)
         form.createField(Dummy.selectOptions)
-
+        
         this.form = form
+        this.placeholder = holder
     }
 
     initListeners() {
         const placeholder = this.placeholder
-        console.log({ placeholder })
     }
 }

@@ -24,7 +24,6 @@ export default class KGInputRadio extends BaseInput {
 
     initElement() {
         const options = this.options
-        console.log(options)
         const input = this.input
         if (!isNull(options.checked)) input.checked = options.checked
     }

@@ -22,7 +22,6 @@ export default class BaseField extends BaseComponent {
             }
             this.options.inputs = [...inputs]
         }
-        console.log({options: this.options})
     }
 
     get defaultOptions() {
