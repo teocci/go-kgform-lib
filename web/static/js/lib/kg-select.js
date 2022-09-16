@@ -32,23 +32,23 @@ export default class KGSelect extends BaseComponent {
     initElement() {
         const options = this.options
 
-        let label = document.createElement('label')
+        const label = document.createElement('label')
         label.htmlFor = options.id
         label.textContent = options.legend
 
-        let select = document.createElement('select')
+        const select = document.createElement('select')
         select.name = options.name
         select.id = options.id
 
         options.items.forEach((element) => {
-            let option = document.createElement('option')
+            const option = document.createElement('option')
             option.value = element.value
             option.textContent = element.text
 
             select.appendChild(option)
         })
 
-        let div = document.createElement('div')
+        const div = document.createElement('div')
         div.append(label, select)
 
         this.dom = div
